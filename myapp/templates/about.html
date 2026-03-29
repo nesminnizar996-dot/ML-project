@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>About</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<h2>Migration Prediction</h2>
+
+<ul>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'prediction' %}">Prediction</a>
+</ul>
+</nav>
+
+<div class="container">
+
+<h1>About This Project</h1>
+
+<p>
+This project predicts migration type using Machine Learning.
+It analyzes demographic information like male, female,
+children, youth, adults and seniors.
+</p>
+
+<div class="card">
+
+<h3>Algorithm Used</h3>
+
+<p>Decision Tree Classifier</p>
+
+</div>
+
+<div class="card">
+
+<h3>Technology Used</h3>
+
+<p>
+Django <br>
+Python <br>
+Machine Learning <br>
+Pickle Model
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

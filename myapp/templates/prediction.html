@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Prediction</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>Migration Prediction</h2>
+
+<ul>
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'prediction' %}">Prediction</a>
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Migration Prediction</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="number" name="male" placeholder="Male Population" required>
+
+<input type="number" name="female" placeholder="Female Population" required>
+
+<input type="number" name="children" placeholder="Children (0-14)" required>
+
+<input type="number" name="youth" placeholder="Youth (15-24)" required>
+
+<input type="number" name="adult" placeholder="Adults (25-64)" required>
+
+<input type="number" name="seniors" placeholder="Seniors (65+)" required>
+
+<button type="submit">Predict</button>
+
+</form>
+
+{% if result %}
+
+<div class="result">
+
+Prediction Result: <strong>{{result}}</strong>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
